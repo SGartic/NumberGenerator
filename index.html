@@ -2,24 +2,29 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <title>NumberGenerator</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8" />
+    <title>Number Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
-    <h1>Random Number Generator</h1>
-    <input type="number" id="min" value="0"/>
-    <br>
-    <input type="number" id="max" value="100"/>
-    <br>
-    <br>
-    <br>
-    <div id="result"></div>
+    <button id="toggle-mode" aria-label="Cambiar tema">
+        <i id="mode-icon" class="fas fa-sun"></i>
+    </button>
 
+    <main class="card">
+        <h1>Random Number Generator</h1>
 
-    <button onclick="generateRandomNumber()">Generate</button>
-    
+        <div class="inputs">
+            <input type="number" id="min" value="0" />
+            <input type="number" id="max" value="100" />
+        </div>
+
+        <button class="generate-btn" onclick="generateRandomNumber()">Generar</button>
+
+        <div id="result" class="result"></div>
+    </main>
 
     <script src="js/script.js"></script>
 </body>

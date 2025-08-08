@@ -1,18 +1,100 @@
+:root {
+    --bg-color: #f7f7f7;
+    --text-color: #222;
+    --card-bg: #ffffff;
+    --accent-color: #4caf50;
+    --button-bg: #4caf50;
+    --button-text: #ffffff;
+}
+
+body.dark {
+    --bg-color: #121212;
+    --text-color: #f0f0f0;
+    --card-bg: #1e1e1e;
+    --accent-color: #81c784;
+    --button-bg: #81c784;
+    --button-text: #121212;
+}
+
 body {
-    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    transition: background-color 0.4s, color 0.4s;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
     text-align: center;
-    margin-top: 50px;
+    max-width: 450px;
+    width: 90%;
+    transition: background-color 0.4s, color 0.4s;
+}
+
+.inputs {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 20px 0;
 }
 
 input {
-    width: 300px;
+    flex: 1;
     padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: var(--bg-color);
+    color: var(--text-color);
+    transition: border 0.3s;
 }
 
-button {
-    padding: 10px 20px;
-    margin-left: 10px;
+input:focus {
+    border-color: var(--accent-color);
+    outline: none;
 }
-#min, #max {
-    width: 100px;
+
+.generate-btn {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.generate-btn:hover {
+    background-color: #388e3c;
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#toggle-mode {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color);
+    z-index: 999;
+    transition: color 0.3s;
 }
